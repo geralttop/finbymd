@@ -1,0 +1,9 @@
+{
+  "id": "finbymd",
+  "name": "finbymd",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Учёт денег в markdown-файлах: журнал месяца, счета и категории прямо в хранилище.",
+  "author": "geralttop",
+  "isDesktopOnly": false
+}

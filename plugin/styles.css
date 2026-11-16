@@ -1,0 +1,935 @@
+.finbymd-view {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.finbymd-shell {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+}
+
+/* ---------- боковая панель ---------- */
+
+.finbymd-side {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 0 0 248px;
+  width: 248px;
+  padding: 16px 14px;
+  border-right: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  overflow-y: auto;
+}
+
+.finbymd-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.finbymd-logo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 700;
+}
+
+.finbymd-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.finbymd-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.finbymd-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-normal);
+  text-align: left;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.finbymd-nav-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.finbymd-nav-item.is-active {
+  background: var(--background-modifier-active-hover);
+  font-weight: 600;
+}
+
+.finbymd-nav-icon {
+  display: inline-flex;
+  color: var(--text-muted);
+}
+
+.finbymd-nav-item.is-active .finbymd-nav-icon {
+  color: var(--interactive-accent);
+}
+
+.finbymd-side-head {
+  margin: 16px 0 6px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.finbymd-side-head-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.finbymd-side-head-row .finbymd-side-head {
+  flex: 1;
+}
+
+.finbymd-side-arrow {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.finbymd-side-row,
+.finbymd-side-month {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-normal);
+  font-size: 13px;
+  text-align: left;
+  box-shadow: none;
+}
+
+.finbymd-side-row {
+  cursor: default;
+}
+
+.finbymd-side-month:hover {
+  background: var(--background-modifier-hover);
+}
+
+.finbymd-side-month.is-active {
+  background: var(--background-modifier-active-hover);
+  font-weight: 600;
+}
+
+.finbymd-side-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 11px;
+  color: var(--text-faint);
+  word-break: break-all;
+}
+
+/* ---------- основная колонка ---------- */
+
+.finbymd-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.finbymd-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.finbymd-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.finbymd-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-green);
+}
+
+.finbymd-path {
+  text-transform: none;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 240px;
+}
+
+.finbymd-top-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.finbymd-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+  box-shadow: none;
+  color: var(--text-muted);
+}
+
+.finbymd-icon-btn:hover {
+  color: var(--text-normal);
+}
+
+.finbymd-icon-btn.is-active {
+  color: var(--text-on-accent);
+  background: var(--interactive-accent);
+}
+
+.finbymd-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 20px 24px 80px;
+}
+
+.finbymd-kicker {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.finbymd-screen-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.finbymd-screen-head h1 {
+  margin: 2px 0 4px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.finbymd-screen-head p {
+  margin: 0;
+}
+
+.finbymd-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.finbymd-month-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.finbymd-primary {
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  box-shadow: none;
+  font-weight: 600;
+}
+
+/* ---------- карточки и журнал ---------- */
+
+.finbymd-card {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-primary);
+  padding: 12px 16px;
+}
+
+.finbymd-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin-bottom: 18px;
+}
+
+.finbymd-summary-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 120px;
+}
+
+.finbymd-summary-col strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.finbymd-day {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 18px 0 8px;
+  font-weight: 600;
+}
+
+.finbymd-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 14px;
+  margin-bottom: 6px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-primary);
+  text-align: left;
+  box-shadow: none;
+}
+
+.finbymd-row:hover {
+  background: var(--background-modifier-hover);
+}
+
+.finbymd-row-badge {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  flex: 0 0 34px;
+}
+
+.finbymd-row-badge.is-expense {
+  background: rgba(210, 80, 80, 0.12);
+  color: var(--text-error);
+}
+
+.finbymd-row-badge.is-income {
+  background: rgba(70, 160, 100, 0.14);
+  color: var(--color-green);
+}
+
+.finbymd-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.finbymd-row-title {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.finbymd-row-meta {
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.finbymd-row-cur {
+  flex: 0 0 34px;
+  text-align: right;
+}
+
+.finbymd-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.finbymd-minus {
+  color: var(--text-error);
+}
+
+.finbymd-plus {
+  color: var(--color-green);
+}
+
+.finbymd-muted {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.finbymd-section {
+  margin: 24px 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.finbymd-stat-row {
+  margin-bottom: 10px;
+}
+
+.finbymd-stat-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.finbymd-bar {
+  height: 6px;
+  margin-top: 4px;
+  border-radius: 3px;
+  background: var(--background-modifier-border);
+  overflow: hidden;
+}
+
+.finbymd-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--interactive-accent);
+}
+
+.finbymd-account-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.finbymd-account-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.finbymd-account-right {
+  text-align: right;
+}
+
+.finbymd-category-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.finbymd-category-row > span:first-child {
+  flex: 1;
+}
+
+.finbymd-chip {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--background-modifier-border);
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.finbymd-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border-left: 3px solid var(--color-orange);
+  background: var(--background-secondary);
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.finbymd-banner-bad {
+  border-left-color: var(--text-error);
+}
+
+.finbymd-empty {
+  margin-top: 40px;
+  max-width: 520px;
+}
+
+.finbymd-mobile-nav {
+  display: none;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  overflow-x: auto;
+}
+
+.finbymd-mobile-tab {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+  font-size: 13px;
+}
+
+.finbymd-mobile-tab.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+/* ---------- чат ---------- */
+
+.finbymd-chat-host {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 360px;
+  width: 360px;
+  min-height: 0;
+  border-left: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+}
+
+.finbymd-chat {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.finbymd-chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.finbymd-chat-icon {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+}
+
+.finbymd-chat-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.finbymd-chat-field {
+  width: 100%;
+  min-height: 30px;
+  font-size: 13px;
+}
+
+.finbymd-chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px 14px;
+}
+
+.finbymd-msg {
+  max-width: 92%;
+  padding: 8px 11px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.finbymd-msg-user {
+  align-self: flex-end;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.finbymd-msg-bot {
+  align-self: flex-start;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.finbymd-msg-tool {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px dashed var(--background-modifier-border);
+  color: var(--text-faint);
+  font-family: var(--font-monospace);
+  font-size: 11px;
+}
+
+.finbymd-msg-error {
+  align-self: stretch;
+  border: 1px solid var(--text-error);
+  color: var(--text-error);
+  font-size: 13px;
+}
+
+.finbymd-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px 14px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.finbymd-chat-input {
+  flex: 1;
+  min-height: 40px;
+  resize: none;
+  font-size: 14px;
+}
+
+.finbymd-chat-send {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 10px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  box-shadow: none;
+  font-size: 18px;
+}
+
+/* ---------- модалка ---------- */
+
+.finbymd-modal .finbymd-kind {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.finbymd-modal .finbymd-kind-btn {
+  flex: 1;
+  min-height: 40px;
+  border-radius: 8px;
+}
+
+.finbymd-modal .finbymd-kind-btn.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.finbymd-modal .finbymd-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finbymd-modal .finbymd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.finbymd-modal .finbymd-field label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.finbymd-modal .finbymd-input {
+  width: 100%;
+  min-height: 40px;
+}
+
+.finbymd-modal .finbymd-error {
+  margin: 12px 0 0;
+  color: var(--text-error);
+  font-size: 13px;
+}
+
+.finbymd-modal .finbymd-actions,
+.finbymd-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.finbymd-modal .finbymd-actions button,
+.finbymd-actions button {
+  min-height: 40px;
+}
+
+.finbymd-danger {
+  color: var(--text-error);
+}
+
+/* ---------- узкий экран ---------- */
+
+@media (max-width: 900px) {
+  .finbymd-side {
+    display: none;
+  }
+
+  .finbymd-mobile-nav {
+    display: flex;
+  }
+
+  .finbymd-content {
+    padding: 14px 14px 80px;
+  }
+
+  .finbymd-screen-head {
+    flex-direction: column;
+  }
+
+  .finbymd-screen-head h1 {
+    font-size: 24px;
+  }
+
+  .finbymd-chat-host {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    flex-basis: auto;
+    z-index: 5;
+  }
+}
+
+/* ---------- чат окном (телефон) ---------- */
+
+.finbymd-chat-shell {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  max-height: 85vh;
+}
+
+.finbymd-chat-shell .modal-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.finbymd-chat-modal {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+}
+
+.finbymd-chat-host-modal {
+  flex: 1;
+  width: auto;
+  min-height: 0;
+  border-left: none;
+  background: transparent;
+}
+
+/* крестик рисуем сами в шапке чата, чтобы он был всегда на месте */
+.finbymd-chat-shell .modal-close-button {
+  display: none;
+}
+
+/* ---------- диаграммы и история категории ---------- */
+
+.finbymd-view {
+  --fin-chart-1: #d3a35f;
+  --fin-chart-2: #c97b6b;
+  --fin-chart-3: #8fa97c;
+  --fin-chart-4: #7b9cc4;
+  --fin-chart-5: #a98cb6;
+  --fin-chart-6: #c39a7c;
+  --fin-chart-7: #77b1a3;
+  --fin-chart-8: #b7a562;
+  --fin-chart-9: #c98fa2;
+  --fin-chart-10: #8f9bb3;
+}
+
+.finbymd-donut-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.finbymd-donut {
+  position: relative;
+  flex: 0 0 150px;
+  width: 150px;
+  height: 150px;
+}
+
+.finbymd-donut-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.finbymd-donut-slice {
+  cursor: pointer;
+}
+
+.finbymd-donut-slice:hover {
+  filter: brightness(1.14);
+}
+
+.finbymd-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.finbymd-donut-center strong {
+  font-size: 17px;
+}
+
+.finbymd-donut-center .finbymd-muted {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.finbymd-legend {
+  display: flex;
+  flex: 1 1 220px;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.finbymd-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-normal);
+  font-size: 13px;
+  text-align: left;
+}
+
+.finbymd-legend-row:hover {
+  background: var(--background-modifier-hover);
+}
+
+.finbymd-legend-dot {
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+
+.finbymd-legend-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.finbymd-legend-row .finbymd-num {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.finbymd-insight {
+  margin: 0 0 12px;
+  line-height: 1.45;
+}
+
+.finbymd-category-link {
+  width: 100%;
+  box-shadow: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-normal);
+}
+
+.finbymd-category-link:hover {
+  background: var(--background-modifier-hover);
+}
+
+.finbymd-chevron {
+  display: grid;
+  place-items: center;
+  color: var(--text-faint);
+}
+
+.finbymd-day-total {
+  margin-left: auto;
+}
+
+.finbymd-back {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+  box-shadow: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.finbymd-back:hover {
+  color: var(--text-normal);
+}
+
+.finbymd-note {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 12.5px;
+}

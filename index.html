@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>finbymd</title>
+    <script>
+      // Тема ставится до первой отрисовки, чтобы окно не мигало.
+      try {
+        var saved = JSON.parse(localStorage.getItem("finbymd.theme") || "{}");
+        var brightness = saved.brightness === "light" ? "light" : "dark";
+        var palettes = ["neutral", "red", "blue", "green"];
+        var palette = palettes.indexOf(saved.palette) >= 0 ? saved.palette : "neutral";
+        document.documentElement.dataset.brightness = brightness;
+        document.documentElement.dataset.palette = palette;
+      } catch (error) {
+        document.documentElement.dataset.brightness = "dark";
+        document.documentElement.dataset.palette = "neutral";
+      }
+    </script>
+    <style>
+      html {
+        background: #131417;
+      }
+      html[data-brightness="light"] {
+        background: #f5f3ee;
+      }
+    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <main id="app"></main>
+  </body>
+</html>
